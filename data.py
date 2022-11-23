@@ -1,0 +1,2 @@
+jarmuvek=[]
+meret=[]
