@@ -9,3 +9,4 @@ Az alkalmazás egy olyan katonai hangár férőhelyeit tartja számon amiben tan
 3-Szabad helyek száma
 4-Páncélozott csapatszállítók száma
 5-Tankok száma
+6-Teljes hangár tartalma
