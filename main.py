@@ -7,7 +7,7 @@ while valasztas!=0:
     if valasztas=='1':
         uj_jarmu()
     elif valasztas=='2':
-        pass
+        jarmu_torol()
     elif valasztas=='3':
         pass
     elif valasztas=='4':

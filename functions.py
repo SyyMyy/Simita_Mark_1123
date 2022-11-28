@@ -31,7 +31,7 @@ def tartalom():
         print(f'\t{item}')
     input('Tovább...') 
 
-def mentes(jarmu, meret):
+def mentes_veg(jarmu, meret):
     file=open(filename, 'a', encoding='utf-8')
     file.write(f'\n{jarmu};{meret}')   
     file.close
@@ -43,5 +43,27 @@ def uj_jarmu():
     ujMeret=int(input('Jármű mérete(1-Csapatszállító, 2-Tank): '))
     jarmuvek.append(ujJarmu)
     meret.append(ujMeret)   
-    mentes(ujJarmu, ujMeret)
+    mentes_veg(ujJarmu, ujMeret)
     input('Sikeres felvétel...')
+
+def sorszamozas():
+    for i in range(len(jarmuvek)):  
+        print(f'\t{i+1}. {jarmuvek[i]}')
+
+def jarmu_torol():
+    system('cls')
+    print('----------JÁRMŰ TÖRLÉSE----------')    
+    sorszamozas()
+    sorszam=int(input('Melyik jármű hagyta el a hangárt? Kérem adja meg a sorszámát:'))
+    jarmuvek.pop(sorszam-1)
+    meret.pop(sorszam-1)
+    mentes()
+    input('Sikeres törlés...')
+
+def mentes():
+    file=open(filename, 'w', encoding='utf-8')
+    for i in range(len(jarmuvek)):
+        file.write(f'{jarmuvek[i]};{meret[i]}')
+        if i<len(meret)-1:
+            file.write('\n')
+    file.close()        
