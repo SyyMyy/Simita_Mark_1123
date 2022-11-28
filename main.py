@@ -9,7 +9,7 @@ while valasztas!=0:
     elif valasztas=='2':
         jarmu_torol()
     elif valasztas=='3':
-        pass
+       szabadhely()
     elif valasztas=='4':
         pass
     elif valasztas=='5':

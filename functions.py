@@ -17,7 +17,6 @@ def menu():
 
 def beolvasas():
     file=open(filename, 'r', encoding='utf-8')
-    file.readline()
     for jarmu in file:
         darabolt=jarmu.strip().split(';')
         jarmuvek.append(darabolt[0])
@@ -41,10 +40,16 @@ def uj_jarmu():
     print('----------ÚJ JÁRMŰ----------')
     ujJarmu=input('Jármű neve: ') 
     ujMeret=int(input('Jármű mérete(1-Csapatszállító, 2-Tank): '))
-    jarmuvek.append(ujJarmu)
-    meret.append(ujMeret)   
-    mentes_veg(ujJarmu, ujMeret)
-    input('Sikeres felvétel...')
+    if szabadhely()>2:
+        jarmuvek.append(ujJarmu)
+        meret.append(ujMeret)   
+        mentes_veg(ujJarmu, ujMeret)
+        input('Sikeres felvétel...')
+    elif szabadhely()>1 and ujMeret==2:
+        print('Több tank már nem fér a hangárba')
+    elif szabadhely()==0:
+        print()    
+            
 
 def sorszamozas():
     for i in range(len(jarmuvek)):  
@@ -66,4 +71,21 @@ def mentes():
         file.write(f'{jarmuvek[i]};{meret[i]}')
         if i<len(meret)-1:
             file.write('\n')
-    file.close()        
+    file.close() 
+
+ferohely=40
+foglalthely=0
+
+def osszegzes(szam):
+    for i in meret:
+        szam+=i
+    return szam       
+
+def szabadhely():
+    system("cls")
+    print('----------SZABAD HELYEK----------')
+    szabad=ferohely-osszegzes(foglalthely)
+    print(f'\nA szabad helyek száma:{szabad}')
+    input('Tovább...')        
+  
+                 
