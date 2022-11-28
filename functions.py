@@ -29,5 +29,19 @@ def tartalom():
     print('----------HANGÁR----------')  
     for item in jarmuvek:
         print(f'\t{item}')
-    input('Tovább...')    
-        
+    input('Tovább...') 
+
+def mentes(jarmu, meret):
+    file=open(filename, 'a', encoding='utf-8')
+    file.write(f'\n{jarmu};{meret}')   
+    file.close
+
+def uj_jarmu():
+    system('cls')
+    print('----------ÚJ JÁRMŰ----------')
+    ujJarmu=input('Jármű neve: ') 
+    ujMeret=int(input('Jármű mérete(1-Csapatszállító, 2-Tank): '))
+    jarmuvek.append(ujJarmu)
+    meret.append(ujMeret)   
+    mentes(ujJarmu, ujMeret)
+    input('Sikeres felvétel...')
