@@ -22,5 +22,12 @@ def beolvasas():
         darabolt=jarmu.strip().split(';')
         jarmuvek.append(darabolt[0])
         meret.append(int(darabolt[1]))
-    file.close()    
+    file.close()  
+
+def tartalom():
+    system('cls')
+    print('----------HANGÁR----------')  
+    for item in jarmuvek:
+        print(f'\t{item}')
+    input('Tovább...')    
         
