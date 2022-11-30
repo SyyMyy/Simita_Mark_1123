@@ -39,7 +39,9 @@ def uj_jarmu():
     system('cls')
     print('----------ÚJ JÁRMŰ----------')
     ujJarmu=input('Jármű neve: ') 
-    ujMeret=int(input('Jármű mérete(1-Csapatszállító, 2-Tank): '))
+    ujMeret=0
+    while ujMeret<1 or ujMeret>2:
+        ujMeret=int(input('Jármű mérete(1-Csapatszállító, 2-Tank): '))
     if int(ferohely-osszegzes(foglalthely))>=2:
         jarmuvek.append(ujJarmu)
         meret.append(ujMeret)   
