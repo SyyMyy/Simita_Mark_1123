@@ -94,5 +94,15 @@ def szabadhely():
     szabad=ferohely-osszegzes(foglalthely)
     print(f'\nA szabad helyek száma:{szabad}')
     input('Tovább...')        
-  
-                 
+
+def tankok_szama():
+    system('cls')
+    szam=meret.count(2)
+    print(f'A hangárban {szam}db tank található')
+    input('Tovább...')
+
+def cssz_szama():
+    system('cls')
+    szam2=meret.count(1)
+    print(f'A hangárban {szam2}db páncélozott csapatszállító található')
+    input('Tovább...')    

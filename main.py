@@ -11,8 +11,8 @@ while valasztas!=0:
     elif valasztas=='3':
        szabadhely()
     elif valasztas=='4':
-        pass
+        cssz_szama()
     elif valasztas=='5':
-        pass
+        tankok_szama()
     elif valasztas=='6':
         tartalom()
