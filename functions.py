@@ -40,15 +40,20 @@ def uj_jarmu():
     print('----------ÚJ JÁRMŰ----------')
     ujJarmu=input('Jármű neve: ') 
     ujMeret=int(input('Jármű mérete(1-Csapatszállító, 2-Tank): '))
-    if szabadhely()>2:
+    if int(ferohely-osszegzes(foglalthely))>=2:
         jarmuvek.append(ujJarmu)
         meret.append(ujMeret)   
         mentes_veg(ujJarmu, ujMeret)
         input('Sikeres felvétel...')
-    elif szabadhely()>1 and ujMeret==2:
-        print('Több tank már nem fér a hangárba')
-    elif szabadhely()==0:
-        print()    
+    elif int(ferohely-osszegzes(foglalthely))==1 and ujMeret==1:
+        jarmuvek.append(ujJarmu)
+        meret.append(ujMeret)   
+        mentes_veg(ujJarmu, ujMeret)
+        input('Sikeres felvétel...') 
+    elif int(ferohely-osszegzes(foglalthely))==1 and ujMeret==2:
+        input('Több tank már nem fér a hangárba..')       
+    elif int(ferohely-osszegzes(foglalthely))==0:
+        input('A hangár megtelt..')    
             
 
 def sorszamozas():
